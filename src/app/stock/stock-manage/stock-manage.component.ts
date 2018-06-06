@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockManageComponent implements OnInit {
 
-  private stock:Array<Stock>;
+  private stocks:Array<Stock>;
 
   constructor() { }
 
   ngOnInit() {
-    this.stock = [
+    this.stocks = [
       new Stock(1, '第一只股票', 1.99, 3.5, '这是第一只股票，是我创建的', ['IT','互联网']),
       new Stock(2, '第二只股票', 2.99, 4.5, '这是第二只股票，是我创建的', ['金融','互联网']),
       new Stock(3, '第三只股票', 3.99, 1.5, '这是第三只股票，是我创建的', ['互联网']),
