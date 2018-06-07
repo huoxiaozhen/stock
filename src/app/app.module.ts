@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from "@angular/router";
 
 
 import { AppComponent } from './app.component';
@@ -10,7 +11,15 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { StockManageComponent } from './stock/stock-manage/stock-manage.component';
 import { StartsComponent } from './starts/starts.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StockFormComponent } from './stock/stock-form/stock-form.component';
 
+const routeConfig:Routes = [
+  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+  {path:'dashboard',component: DashboardComponent},
+  {path:'stock',component: StockManageComponent},
+  {path:'stock/:id',component: StockFormComponent}
+]
 
 @NgModule({
   declarations: [
@@ -21,10 +30,13 @@ import { StartsComponent } from './starts/starts.component';
     FooterComponent,
     ContentComponent,
     StockManageComponent,
-    StartsComponent
+    StartsComponent,
+    DashboardComponent,
+    StockFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

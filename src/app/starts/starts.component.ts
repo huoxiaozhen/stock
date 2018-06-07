@@ -14,10 +14,10 @@ export class StartsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // for(let i=0; i< =5;i++){
-
-    // }
-    this.starts = [false,false,true,true,true];
+    this.starts = [];
+    for(let i=1; i<=5;i++){
+      this.starts.push( i>this.rating );
+    }
   }
 
 }
