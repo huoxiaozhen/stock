@@ -25,6 +25,7 @@ export class StockFormComponent implements OnInit {
     this.router.navigateByUrl('/stock');
   }
   save(){
+    console.log(this.stock.rating);
     this.router.navigateByUrl('/stock');
   }
 
